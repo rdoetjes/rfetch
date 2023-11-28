@@ -9,6 +9,7 @@ OS version:      &lt;os_version&gt;
 Number of CPUs:  &lt;cpu_len&gt;
 Total Memory:    &lt;total_memory&gt; GB
 Load average:    &lt;load.one&gt;, &lt;load.five&gt;, &lt;load.fifteen&gt;
+Primary IP address: &lt;ip&gt;
 </pre>
 
 The message.txt that contains the above listed tags should reside in the ~/.config/rfetch/message.txt directory

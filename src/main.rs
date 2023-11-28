@@ -1,4 +1,5 @@
 use std::{fs, collections::HashMap};
+use local_ip_address::local_ip;
 
 use sysinfo::{System, SystemExt };
 
@@ -20,6 +21,7 @@ fn replace_data(mut logo: String) -> String{
     
     let mut m_gb = (sys.total_memory()/(1024*1024*1024)).to_string();
     if m_gb == "15" {  m_gb = "16".to_owned() }
+    let ip = local_ip().expect("Could not get ip");
 
     let replacement = HashMap::from([
         ("<name>", sys.name().expect(na)),
@@ -30,6 +32,7 @@ fn replace_data(mut logo: String) -> String{
         ("<load.one>", (round(sys.load_average().one, 2).to_string())),
         ("<load.five>", (round(sys.load_average().five, 2).to_string())),
         ("<load.fifteen>", (round(sys.load_average().fifteen, 2).to_string())),
+        ("<ip>", ip.to_string()),
         ("<r>", "\x1b[31m".to_string()),
         ("<g>", "\x1b[32m".to_string()),
         ("<y>", "\x1b[33m".to_string()),
