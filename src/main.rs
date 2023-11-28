@@ -22,7 +22,7 @@ fn replace_data(logo: &str) -> String{
     let logo = logo.replace("<kernel_version>", &sys.kernel_version().expect(na));
     let logo = logo.replace("<os_version>", &sys.os_version().expect(na));
     let logo = logo.replace("<cpu_len>", &sys.cpus().len().to_string());
-    let logo = logo.replace("<total_memory>", &(sys.total_memory()/(1024*1000*1000)).to_string());
+    let logo = logo.replace("<total_memory>", &(sys.total_memory()/(1024*1024*1024)).to_string());
     let logo = logo.replace("<load.one>", &(round(sys.load_average().one, 2).to_string()));
     let logo = logo.replace("<load.five>", &(round(sys.load_average().five, 2).to_string()));
     let logo = logo.replace("<load.fifteen>", &(round(sys.load_average().fifteen,2).to_string()));
