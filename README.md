@@ -2,14 +2,14 @@
 rfetch is simple small motd that can set the following information like motd.
 Insead of motd we use the name message.txt
 
-<pre>
-System name:     <name> 
-Kernel version:  <kernel_version>
-OS version:      <os_version> 
-Number of CPUs:  <cpu_len>
-Total Memory:    <total_memory> GB
-Load average:    <load.one>, <load.five>, <load.fifteen>
-</pre>
+&lt;pre&gt;
+System name:     &lt;name&gt; 
+Kernel version:  &lt;kernel_version&gt;
+OS version:      &lt;os_version&gt; 
+Number of CPUs:  &lt;cpu_len&gt;
+Total Memory:    &lt;total_memory&gt; GB
+Load average:    &lt;load.one&gt;, &lt;load.five&gt;, &lt;load.fifteen&gt;
+&lt;/pre&gt;
 
 The message.txt that contains the above listed tags should reside in the ~/.config/rfetch/message.txt directory
 and in your .zshrc you just call rfetch
