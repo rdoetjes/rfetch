@@ -43,9 +43,9 @@ fn replace_data(mut logo: String) -> String{
         ]);
 
     for kv in replacement {
-       logo = logo.replace(kv.0, &kv.1).clone();
+       logo = logo.replace(kv.0, &kv.1);
     }
-    logo.to_owned()
+    logo
 }
 
 fn main() {
