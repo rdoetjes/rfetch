@@ -3,7 +3,7 @@ rfetch is simple small motd that can set the following information like motd.
 Insead of motd we use the name message.txt
 
 <pre>
-System name:     &lt;name&gt; 
+Kernel name:     &lt;name&gt; 
 Kernel version:  &lt;kernel_version&gt;
 OS version:      &lt;os_version&gt; 
 Number of CPUs:  &lt;cpu_len&gt;
