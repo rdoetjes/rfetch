@@ -14,4 +14,6 @@ Load average:    &lt;load.one&gt;, &lt;load.five&gt;, &lt;load.fifteen&gt;
 The message.txt that contains the above listed tags should reside in the ~/.config/rfetch/message.txt directory
 and in your .zshrc you just call rfetch
 
-This application relies on the sysinfo crate. This crate collects the data that we simple aka quick and dirty replace with the tags listed above
+This application relies on the sysinfo crate. This crate collects the system data listend above, which inturn is quick and dirtily replaced -- this is efficienter than sed or awk hence this little tool was created.
+
+See message.txt for an example.
