@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 sysinfo = "0.29.11"
+phf = "0.8.0"
