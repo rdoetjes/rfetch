@@ -16,7 +16,7 @@ fn round(x: f64, decimals: u32) -> f64 {
 fn replace_data(mut logo: String) -> String{
     let mut sys = System::new();
     sys.refresh_all();
-    let na = "Can't obtain info";
+    let na: String = "Can't obtain info".to_string();
     
     let mut m_gb = (sys.total_memory()/(1024*1024*1024)).to_string();
     if m_gb == "15" {  m_gb = "16".to_string() }
@@ -25,9 +25,9 @@ fn replace_data(mut logo: String) -> String{
 
     // hashmap where the key is the token in the template and the value, is the value with what the token will be replaced
     let replacement = HashMap::from([
-        ("<name>", sys.name().expect(na)),
-        ("<kernel_version>", sys.kernel_version().expect(na)),
-        ("<os_version>", sys.os_version().expect(na)),
+        ("<name>", sys.name().unwrap_or(na.clone())),
+        ("<kernel_version>", sys.kernel_version().unwrap_or(na.clone())),
+        ("<os_version>", sys.os_version().unwrap_or(na.clone())),
         ("<cpu_len>", sys.cpus().len().to_string()),
         ("<total_memory>", m_gb),
         ("<load.one>", (round(sys.load_average().one, 2).to_string())),
@@ -42,7 +42,7 @@ fn replace_data(mut logo: String) -> String{
         ("<c>", "\x1b[36m".to_string()),
         ("<w>", "\x1b[37m".to_string()),
         ]);
-
+    
     for kv in replacement {
        logo = logo.replace(kv.0, &kv.1);
     }
