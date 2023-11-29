@@ -23,6 +23,7 @@ fn replace_data(mut logo: String) -> String{
 
     let ip = local_ip().expect("Could not get ip");
 
+    // hashmap where the key is the token in the template and the value, is the value with what the token will be replaced
     let replacement = HashMap::from([
         ("<name>", sys.name().expect(na)),
         ("<kernel_version>", sys.kernel_version().expect(na)),
