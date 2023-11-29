@@ -19,8 +19,8 @@ fn replace_data(mut logo: String) -> String{
     let na = "Can't obtain info";
     
     let mut m_gb = (sys.total_memory()/(1024*1024*1024)).to_string();
-    if m_gb == "15" {  m_gb = "16".to_owned() }
-    
+    if m_gb == "15" {  m_gb = "16".to_string() }
+
     let ip = local_ip().expect("Could not get ip");
 
     let replacement = HashMap::from([
