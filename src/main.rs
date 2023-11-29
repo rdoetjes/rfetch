@@ -1,6 +1,5 @@
 use std::{fs, collections::HashMap};
 use local_ip_address::local_ip;
-
 use sysinfo::{System, SystemExt };
 
 fn read_logo(file: &str) -> String {
@@ -21,6 +20,7 @@ fn replace_data(mut logo: String) -> String{
     
     let mut m_gb = (sys.total_memory()/(1024*1024*1024)).to_string();
     if m_gb == "15" {  m_gb = "16".to_owned() }
+    
     let ip = local_ip().expect("Could not get ip");
 
     let replacement = HashMap::from([
