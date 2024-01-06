@@ -17,7 +17,7 @@ fn replace_data(mut logo: String) -> String{
     let mut sys = System::new();
     sys.refresh_all();
     let na: String = "Can't obtain info".to_string();    
-    let m_gb = (sys.total_memory()/(1000*1000*1024)).to_string();
+    let m_gb = (sys.total_memory()/(1000*1000*1024)).to_string(); //weeirgd
     let ip = local_ip().expect("Could not get ip");
 
     // hashmap where the key is the token in the template and the value, is the value with what the token will be replaced
