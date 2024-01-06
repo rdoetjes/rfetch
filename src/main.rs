@@ -16,11 +16,8 @@ fn round(x: f64, decimals: u32) -> f64 {
 fn replace_data(mut logo: String) -> String{
     let mut sys = System::new();
     sys.refresh_all();
-    let na: String = "Can't obtain info".to_string();
-    
-    let mut m_gb = (sys.total_memory()/(1024*1024*1024)).to_string();
-    if m_gb == "15" {  m_gb = "16".to_string() }
-
+    let na: String = "Can't obtain info".to_string();    
+    let m_gb = (m/(1000*1000*1024)).to_string();
     let ip = local_ip().expect("Could not get ip");
 
     // hashmap where the key is the token in the template and the value, is the value with what the token will be replaced
