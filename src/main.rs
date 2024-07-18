@@ -47,8 +47,8 @@ fn replace_data(mut logo: String) -> String{
 }
 
 fn main() {
-    let logo = read_logo(&(std::env::var("HOME").expect("CAN'T FIND HOME VARIABLE")+"/.config/rfetch/message.txt"));
+    let logo_template = read_logo(&(std::env::var("HOME").expect("CAN'T FIND HOME VARIABLE")+"/.config/rfetch/message.txt"));
     //jus overwrite the logo pointer, we don't need the unfilled template
-    let logo = replace_data(logo);
+    let logo = replace_data(logo_template);
     print!("{}", logo);
 }
