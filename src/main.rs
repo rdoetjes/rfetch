@@ -1,6 +1,7 @@
 use std::{fs, collections::HashMap};
 use local_ip_address::local_ip;
 use sysinfo::{System, SystemExt };
+use std::path::PathBuf;
 
 fn read_logo(file: &str) -> String {
     let contents = fs::read_to_string(file)
@@ -46,8 +47,14 @@ fn replace_data(mut logo: String) -> String{
     logo
 }
 
+fn get_config_path() -> PathBuf {
+    let home = std::env::var("HOME").unwrap_or_else(|_| panic!("HOME environment variable not set"));
+    PathBuf::from(home).join(".config").join("rfetch").join("message.txt")
+}
+
 fn main() {
-    let logo_template = read_logo(&(std::env::var("HOME").expect("CAN'T FIND HOME VARIABLE")+"/.config/rfetch/message.txt"));
+    let config_path = get_config_path();
+    let logo_template = read_logo(config_path.to_str().unwrap());
     //jus overwrite the logo pointer, we don't need the unfilled template
     let logo = replace_data(logo_template);
     print!("{}", logo);
